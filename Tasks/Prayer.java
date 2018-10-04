@@ -8,11 +8,11 @@ import org.powerbot.script.Tile;
 import org.powerbot.script.Random;
 import org.powerbot.script.Condition;
 
-public abstract class LadderDown extends Task {
+public abstract class Prayer extends Task {
 
 
 
-    public LadderDown(ClientContext ctx) {
+    public Prayer(ClientContext ctx) {
         super(ctx);
     }
 
@@ -20,18 +20,20 @@ public abstract class LadderDown extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(Trapdoor)<=5 && ctx.prayer.prayerPoints()>=25;
+        return ctx.players.local().tile().distanceTo(Trapdoor)<=5 && ctx.prayer.prayerPoints()<=25;
     }
 
     public void execute(){
         RCrafter.status = "Praying and going down ladder";
 
-        final GameObject ladder = ctx.objects.select().name("Ladder").nearest().poll();
+
+        final GameObject altar = ctx.objects.select().name("Chaos altar").nearest().poll();
+        altar.click();
+        Condition.sleep(Random.nextInt(100, 150));
 
 
 
 
-        ladder.interact("Climb");
 
     }
 }

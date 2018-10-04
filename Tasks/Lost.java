@@ -1,13 +1,10 @@
 package scripts.Tasks;
 
-import org.powerbot.script.Area;
 import org.powerbot.script.Condition;
 import org.powerbot.script.rt4.*;
 import scripts.RCrafter;
-import scripts.Tasks.Walker;
 import scripts.Task;
 import org.powerbot.script.Tile;
-import org.powerbot.script.Random;
 
 public abstract class Lost extends Task {
 

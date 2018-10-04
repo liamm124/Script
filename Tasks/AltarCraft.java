@@ -358,73 +358,12 @@ public abstract class AltarCraft extends Task {
                 ctx.widgets.widget(218).component(103).interact("Dark Mage");
 
 
-                Condition.sleep(Random.nextInt(5500, 6000));
-                ctx.input.send("{VK_SPACE}");
-                Condition.sleep(Random.nextInt(50, 100));
-                ctx.input.send("{VK_SPACE}");
-                Condition.sleep(Random.nextInt(50, 100));
-                ctx.input.send("{VK_SPACE}");
-                Condition.sleep(Random.nextInt(0, 100));
-                if (Random.nextInt(0,100)<=25) {
+                Condition.sleep(Random.nextInt(6000, 7000));
+                while (ctx.chat.canContinue()){
                     ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
+                    Condition.sleep(Random.nextInt(50, 100));
                 }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
-                if (Random.nextInt(0,100)<=25) {
-                    ctx.input.send("{VK_SPACE}");
-                    Condition.sleep(Random.nextInt(0, 50));
-                }
+
 
 
 

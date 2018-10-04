@@ -57,25 +57,17 @@ public class AntiBan extends Task {
 
                 break;}
             case 2:
-                if (ctx.inventory.select().count()>=27){
-                    System.out.println("Antipattern-Case2:Hovering a Player");
 
-                    Player pl = ctx.players.select().nearest().poll();
-
-                    pl.hover();
-                    Condition.sleep(Random.nextInt(500,1800));
-                    break;
-                } else {
                     System.out.println("Antipattern-Case2:Hovering a Player");
 
                     Player pl = ctx.players.select().nearest().poll();
                     pl.hover();
                     Condition.sleep(Random.nextInt(500,1800));
                     break;
-                }
+
 
             case 3:
-                if (ctx.inventory.select().count()>=27){
+
 
                     System.out.println("Antipattern-Case3:Moving mouse offscreen");
 
@@ -83,41 +75,27 @@ public class AntiBan extends Task {
                     int y = Random.nextInt(-500, -100);
                     ctx.input.move(x, y);
                     ctx.input.defocus();
-
+                if (ctx.inventory.select().count()>=27) {
                     Condition.sleep(Random.nextInt(700, 1300));
+                }else{
+                    Condition.sleep(Random.nextInt(5000, 10000));
+                }
 
                     ctx.input.focus();
                     x = Random.nextInt(16, 512);
                     y = Random.nextInt(45, 334);
                     ctx.input.move(x, y);
 
-                }else{
-                System.out.println("Antipattern-Case3:Moving mouse offscreen");
 
-                int x = Random.nextInt(-500, -100);
-                int y = Random.nextInt(-500, -100);
-                ctx.input.move(x, y);
-                ctx.input.defocus();
 
-                Condition.sleep(Random.nextInt(5000, 10000));
-
-                ctx.input.focus();
-                x = Random.nextInt(16, 512);
-                y = Random.nextInt(45, 334);
-                ctx.input.move(x, y);
-                break;}
             case 4:
-                if (ctx.inventory.select().count()>=27){
-                    ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
-                    break;
-                }else{
                 ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
                 break;
-                }
+
             case 5:
-                if (ctx.inventory.select().count()>=27){
+
                     System.out.println("Antipattern-Case5:Random mouse moving");
 
                     int maxDistance = 0;
@@ -148,46 +126,9 @@ public class AntiBan extends Task {
                     break;
 
 
-                }else{
-                System.out.println("Antipattern-Case5:Random mouse moving");
 
-                int maxDistance = 0;
-                int minDistance = 0;
-                double xvec = Math.random();
-                if (Random.nextInt(0, 2) == 1) {
-                    xvec = -xvec;
-                }
-                double yvec = Math.sqrt(1 - xvec * xvec);
-                if (Random.nextInt(0, 2) == 1) {
-                    yvec = -yvec;
-                }
-                double distance = maxDistance;
-                Point p = ctx.input.getLocation();
-                int maxX = (int) Math.round(xvec * distance + p.x);
-                distance -= Math.abs((maxX - Math.max(0,
-                        Math.min(ctx.game.dimensions().getWidth(), maxX)))
-                        / xvec);
-                int maxY = (int) Math.round(yvec * distance + p.y);
-                distance -= Math.abs((maxY - Math.max(0,
-                        Math.min(ctx.game.dimensions().getHeight(), maxY)))
-                        / yvec);
-                if (distance < minDistance) {
-                    return;
-                }
-                distance = Random.nextInt(minDistance, (int) distance);
-                ctx.input.move((int) (xvec * distance) + p.x, (int) (yvec * distance) + p.y);
-                break;}
             case 6:
-                if (ctx.inventory.select().count()>=27){
-                    System.out.println("Antipattern-Case6:Hovering RC EXP");
-                    ctx.widgets.widget(548).component(49).click();
-                    Condition.sleep(Random.nextInt(300, 500));
-                    if (ctx.widgets.widget(320).component(7).valid()) {
-                        ctx.widgets.widget(320).component(7).hover();
-                        Condition.sleep(Random.nextInt(1200, 3000));
-                        ctx.widgets.widget(548).component(51).click();
-                    }
-                }else {
+
                     System.out.println("Antipattern-Case6:Hovering RC EXP");
                     if (inHouse() && ctx.players.local().inMotion()) {
                         ctx.widgets.widget(548).component(49).click();
@@ -199,53 +140,36 @@ public class AntiBan extends Task {
                         }
                     }
                     break;
-                }
+
             case 7:
-                if (ctx.inventory.select().count()>=27){
+
                     ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
                     break;
-                }else{
-                    ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
-                    break;
-                }
 
             case 8:
-                if (ctx.inventory.select().count()>=27){
+
                     ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
                     break;
-                }else{
-                    ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
-                    break;
-                }
 
 
 
             case 9:
-                if (ctx.inventory.select().count()>=27){
+
                     System.out.println("Antipattern-Case9:Changing mouse speed");
                     ctx.input.speed(Random.nextInt(65, 100));
 
                     break;
-                }else {
-                    System.out.println("Antipattern-Case9:Changing mouse speed");
-                    ctx.input.speed(Random.nextInt(65, 100));
 
-                    break;
-                }
             case 10:
-                if (ctx.inventory.select().count()>=27){
+
                     ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
                     break;
-                }else{
-                    ctx.camera.turnTo(ctx.players.select().nearest().poll());
 
-                    break;
-                }
 
 
             default:

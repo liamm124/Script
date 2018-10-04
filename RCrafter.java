@@ -32,9 +32,9 @@ public class RCrafter extends PollingScript<ClientContext> implements PaintListe
                                       }, new EssBanking(ctx) {
                                       }, new AltarCraft(ctx) {
                                       }, new WalkAltar(ctx) {
-
+                                      }, new Prayer(ctx) {
                                       }, new StaminaPot(ctx) {
-                                      }, new WalkToLadder(ctx){
+                                      }, new WalktoLadder(ctx){
                                       }, new AntiBan(ctx){
                                       }, new Lost(ctx){
                                       }
@@ -68,7 +68,7 @@ public class RCrafter extends PollingScript<ClientContext> implements PaintListe
 
         Graphics2D g = (Graphics2D) graphics;
 
-        g.setColor(new Color(0, 0, 0, 180));
+        g.setColor(new Color(0, 0, 0, 90));
         g.fillRect(0, 0, 200, 110);
 
         g.setColor(new Color(255, 255, 255));

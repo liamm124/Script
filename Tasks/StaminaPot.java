@@ -22,24 +22,21 @@ public abstract class StaminaPot extends Task {
 
 
     public boolean activate() {
-        return ctx.movement.energyLevel()<=Random.nextInt(30,42) || ctx.movement.energyLevel()<=20;
+        return ctx.movement.energyLevel()<=Random.nextInt(30,42);
 
 
     }
 
     public void execute() {
         RCrafter.status = "Drinking potions";
-        if (ctx.inventory.viewable().name("Small pouch").count()==0) {
-
+        if (ctx.game.tab() != Game.Tab.INVENTORY){
             ctx.game.tab(Game.Tab.INVENTORY);
-
-
         }
         ctx.inventory.select().name("Stamina potion(1)").poll().interact("Drink");
         ctx.inventory.select().name("Stamina potion(2)").poll().interact("Drink");
         ctx.inventory.select().name("Stamina potion(3)").poll().interact("Drink");
         ctx.inventory.select().name("Stamina potion(4)").poll().interact("Drink");
-        Condition.sleep(Random.nextInt(250, 500));
+        Condition.sleep(Random.nextInt(110, 500));
 
 
     }

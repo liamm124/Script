@@ -64,7 +64,7 @@ public abstract class EssBanking extends Task{
             });
 
         }
-        Condition.sleep(Random.nextInt(250, 500));
+        Condition.sleep(Random.nextInt(150, 300));
             if(ctx.inventory.select().count()>1 && ctx.inventory.select().name("Pure Essence").isEmpty()  ) {
                 ctx.bank.depositInventory();}
         Condition.sleep(Random.nextInt(250, 500));
