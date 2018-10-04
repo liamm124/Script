@@ -27,20 +27,26 @@ public abstract class WalkToLadder extends Task {
     @Override
     public boolean activate() {
         return
-                ctx.players.local().tile().distanceTo(OuroTele) <=10 ||    ctx.players.local().tile().distanceTo(LadderDownMiddle) <=10 ;
+                ctx.players.local().tile().distanceTo(OuroTele) <=15 ||    ctx.players.local().tile().distanceTo(LadderDownMiddle) <=10 ;
     }
 
     @Override
     public void execute(){
         RCrafter.status = "Walking to ladder";
          int R = Random.nextInt(1,2);
-        if (R==1){
-            walker.walkPath(path1);
+
+        switch (R) {
+            case 1:
+
+
+            ctx.movement.newTilePath(path1).traverse();
+
             ctx.camera.turnTo(ladder);
-        }
-        if (R==2){
-            walker.walkPath(path2);
-        }
+
+            case 2:
+            ctx.movement.newTilePath(path2).traverse();
+
+
 
 
 
@@ -52,4 +58,4 @@ public abstract class WalkToLadder extends Task {
 
 
 
-}
+}}

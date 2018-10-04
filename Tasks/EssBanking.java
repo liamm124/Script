@@ -41,7 +41,7 @@ public abstract class EssBanking extends Task{
 
     @Override
     public boolean activate() {
-        return ctx.inventory.select().name("Pure Essence").isEmpty() && ctx.players.local().tile().distanceTo(Ladder)<=10
+        return ctx.inventory.select().name("Pure Essence").count() <=5 && ctx.players.local().tile().distanceTo(Ladder)<=10
                 ;
     }
 

@@ -18,7 +18,7 @@ public abstract class WalkAltar extends Task {
     private int Ran = Random.nextInt(0,100);
 @Override
     public boolean activate(){
-    return ( ctx.players.local().tile().distanceTo(Bank)<=7 && ctx.players.local().tile().distanceTo(Bank)>=2 && ctx.inventory.select().count()==28 )||(ctx.players.local().tile().distanceTo(Bank)<=7 && ctx.players.local().tile().distanceTo(Bank)>=2 &&  ctx.inventory.select().count()==27);
+    return ( ctx.players.local().tile().distanceTo(Bank)<=10 && ctx.players.local().tile().distanceTo(Bank)>=2 && ctx.inventory.select().count()==28 )||(ctx.players.local().tile().distanceTo(Bank)<=10 && ctx.players.local().tile().distanceTo(Bank)>=2 &&  ctx.inventory.select().count()==27);
 }
 
     private    Tile FirstStep = new Tile(3016+Random.nextInt(-1,1),5614+Random.nextInt(-1,1),0);
@@ -39,8 +39,8 @@ public abstract class WalkAltar extends Task {
             case 1:
                   Tile FirstStep = new Tile(3016+Random.nextInt(-1,1),5614+Random.nextInt(-1,1),0);
                     ctx.movement.step(FirstStep);
-                while (ctx.players.local().tile().distanceTo(FirstStep)>=6 ){
-                    Condition.sleep(Random.nextInt(250,500));
+                while (ctx.players.local().tile().distanceTo(FirstStep)>=10 ){
+                    Condition.sleep(Random.nextInt(550,800));
 
                 }
                 Step2Altarr1(FirstStep);
@@ -49,8 +49,8 @@ public abstract class WalkAltar extends Task {
             case 2:
                 Tile FirstStep2 = new Tile(3014+Random.nextInt(-1,1),5608+Random.nextInt(-1,1),0);
                 ctx.movement.step(FirstStep2);
-                while (ctx.players.local().tile().distanceTo(FirstStep2)>=6 ){
-                    Condition.sleep(Random.nextInt(250,600));
+                while (ctx.players.local().tile().distanceTo(FirstStep2)>=10 ){
+                    Condition.sleep(Random.nextInt(450,700));
                     new AntiBan(ctx).execute();
 
                 }
@@ -61,8 +61,8 @@ public abstract class WalkAltar extends Task {
             case 3:
                 Tile FirstStep3 = new Tile(3013+Random.nextInt(-1,1),5611+Random.nextInt(-1,1),0);
                 ctx.movement.step(FirstStep3);
-                while (ctx.players.local().tile().distanceTo(FirstStep3)>=6 ){
-                    Condition.sleep(Random.nextInt(250,400));
+                while (ctx.players.local().tile().distanceTo(FirstStep3)>=10 ){
+                    Condition.sleep(Random.nextInt(550,700));
                     new AntiBan(ctx).execute();
                 }
                 Step2Altarr1(FirstStep3);
@@ -88,7 +88,7 @@ public abstract class WalkAltar extends Task {
                     Tile secondStep = new Tile(3016+Random.nextInt(-1,1),5592+Random.nextInt(-1,1),0);
                     ctx.movement.step(secondStep);
                     while (ctx.players.local().tile().distanceTo(secondStep)>=8 ){
-                        Condition.sleep(Random.nextInt(250,400));
+                        Condition.sleep(Random.nextInt(550,800));
 
                         ctx.movement.step(secondStep);
 
@@ -102,7 +102,7 @@ public abstract class WalkAltar extends Task {
                     Tile secondStep2 = new Tile(3012+Random.nextInt(-1,1),5596+Random.nextInt(-1,1),0);
                     ctx.movement.step(secondStep2);
                     while (ctx.players.local().tile().distanceTo(secondStep2)>=8 ){
-                        Condition.sleep(Random.nextInt(250,500));
+                        Condition.sleep(Random.nextInt(450,700));
                         ctx.movement.step(secondStep2);
                         new AntiBan(ctx).execute();
                     }
@@ -115,7 +115,7 @@ public abstract class WalkAltar extends Task {
                     Tile secondStep3 = new Tile(3018+Random.nextInt(-1,1),5585+Random.nextInt(-1,1),0);
                     ctx.movement.step(secondStep3);
                     while (ctx.players.local().tile().distanceTo(secondStep3)>=8 ){
-                        Condition.sleep(Random.nextInt(250,400));
+                        Condition.sleep(Random.nextInt(650,800));
                         ctx.movement.step(secondStep3);
 
                         ctx.camera.turnTo(altar);
@@ -140,7 +140,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ThirdStep);
                     while (ctx.players.local().tile().distanceTo(ThirdStep)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(350,600));
                         ctx.movement.step(ThirdStep);
                         new AntiBan(ctx).execute();
                     }
@@ -152,7 +152,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ThirdStep2);
                     while (ctx.players.local().tile().distanceTo(ThirdStep2)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,700));
+                        Condition.sleep(Random.nextInt(550,750));
                         ctx.movement.step(ThirdStep2);
 
                     }
@@ -164,7 +164,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ThirdStep3);
                     while (ctx.players.local().tile().distanceTo(ThirdStep3)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(550,800));
                         ctx.movement.step(ThirdStep3);
                         new AntiBan(ctx).execute();
                         ctx.camera.turnTo(altar);
@@ -190,7 +190,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ForthStep);
                     while (ctx.players.local().tile().distanceTo(ForthStep)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(550,700));
                         ctx.movement.step(ForthStep);
 
                     }
@@ -201,7 +201,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ForthStep2);
                     while (ctx.players.local().tile().distanceTo(ForthStep2)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,700));
+                        Condition.sleep(Random.nextInt(450,700));
                         ctx.movement.step(ForthStep2);
 
                     }
@@ -213,7 +213,7 @@ public abstract class WalkAltar extends Task {
                     ctx.movement.step(ForthStep3);
                     while (ctx.players.local().tile().distanceTo(ForthStep3)>=8 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(550,700));
                         ctx.movement.step(ForthStep3);
                         ctx.camera.turnTo(altar);
                         new AntiBan(ctx).execute();
@@ -240,7 +240,7 @@ public abstract class WalkAltar extends Task {
                     Condition.sleep(100);
                     while (ctx.players.local().tile().distanceTo(FifthStep)>=6 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(550,700));
                         ctx.movement.step(FifthStep);
 
                         ctx.camera.turnTo(altar);
@@ -254,7 +254,7 @@ public abstract class WalkAltar extends Task {
                     Condition.sleep(100);
                     while (ctx.players.local().tile().distanceTo(FifthStep2)>=6 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(450,700));
                         ctx.movement.step(FifthStep2);
                         ctx.camera.turnTo(altar);
                     }
@@ -267,7 +267,7 @@ public abstract class WalkAltar extends Task {
                     Condition.sleep(100);
                     while (ctx.players.local().tile().distanceTo(FifthStep3)>=6 ){
 
-                        Condition.sleep(Random.nextInt(250,600));
+                        Condition.sleep(Random.nextInt(550,800));
                         ctx.movement.step(FifthStep3);
                         ctx.camera.turnTo(altar);
                     }

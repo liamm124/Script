@@ -63,14 +63,14 @@ public class AntiBan extends Task {
                     Player pl = ctx.players.select().nearest().poll();
 
                     pl.hover();
-                    Condition.sleep(Random.nextInt(500,2500));
+                    Condition.sleep(Random.nextInt(500,1800));
                     break;
                 } else {
                     System.out.println("Antipattern-Case2:Hovering a Player");
 
                     Player pl = ctx.players.select().nearest().poll();
                     pl.hover();
-                    Condition.sleep(Random.nextInt(500,2500));
+                    Condition.sleep(Random.nextInt(500,1800));
                     break;
                 }
 
@@ -84,7 +84,7 @@ public class AntiBan extends Task {
                     ctx.input.move(x, y);
                     ctx.input.defocus();
 
-                    Condition.sleep(Random.nextInt(700, 1500));
+                    Condition.sleep(Random.nextInt(700, 1300));
 
                     ctx.input.focus();
                     x = Random.nextInt(16, 512);
@@ -99,7 +99,7 @@ public class AntiBan extends Task {
                 ctx.input.move(x, y);
                 ctx.input.defocus();
 
-                Condition.sleep(Random.nextInt(5000, 13000));
+                Condition.sleep(Random.nextInt(5000, 10000));
 
                 ctx.input.focus();
                 x = Random.nextInt(16, 512);

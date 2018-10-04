@@ -28,7 +28,7 @@ public abstract class LadderDown extends Task {
 
         final GameObject ladder = ctx.objects.select().name("Ladder").nearest().poll();
         final GameObject altar = ctx.objects.select().name("Chaos altar").nearest().poll();
-        if (ctx.prayer.prayerPoints()<=30){
+        if (ctx.prayer.prayerPoints()<=25){
 
             altar.click();
             Condition.sleep(Random.nextInt(25, 50));
@@ -36,7 +36,7 @@ public abstract class LadderDown extends Task {
             Condition.sleep(Random.nextInt(100, 200));
 
         }
-        if (ctx.prayer.prayerPoints()<=30){
+        if (ctx.prayer.prayerPoints()<=25){
 
             altar.click();
             Condition.sleep(Random.nextInt(25, 50));
@@ -44,7 +44,7 @@ public abstract class LadderDown extends Task {
             Condition.sleep(Random.nextInt(100, 200));
 
         }
-        if (ctx.prayer.prayerPoints()<=30){
+        if (ctx.prayer.prayerPoints()<=25){
 
             altar.click();
             Condition.sleep(Random.nextInt(25, 50));
@@ -52,7 +52,7 @@ public abstract class LadderDown extends Task {
             Condition.sleep(Random.nextInt(100, 200));
 
         }
-        if (ctx.prayer.prayerPoints()<=30){
+        if (ctx.prayer.prayerPoints()<=25){
 
             altar.click();
             Condition.sleep(Random.nextInt(25, 50));

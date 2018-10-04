@@ -1,19 +1,14 @@
 package scripts.Tasks;
 
 
-import org.powerbot.script.rt4.ClientContext;
+import org.powerbot.script.rt4.*;
 import scripts.RCrafter;
 import scripts.Task;
-import org.powerbot.script.rt4.Magic;
 import org.powerbot.script.Tile;
-import org.powerbot.script.rt4.GameObject;
 import org.powerbot.script.Condition;
-import org.powerbot.script.rt4.Path;
-import org.powerbot.script.rt4.Player;
 import org.powerbot.script.Random;
-import org.powerbot.script.rt4.Component;
-import org.powerbot.script.rt4.Widget;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
 
 public abstract class AltarCraft extends Task {
@@ -120,60 +115,72 @@ public abstract class AltarCraft extends Task {
 
 
         if (POrder ==1){
-        Condition.sleep(Random.nextInt(800, 1050));
+        Condition.sleep(Random.nextInt(800, 950));
             ctx.inventory.select().name("Giant pouch").poll().hover();
             Condition.sleep(Random.nextInt(600, 950));
-            ctx.input.press(KeyEvent.VK_SHIFT);
-
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
             Condition.sleep(Random.nextInt(250, 500));
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
 
-            Condition.sleep(Random.nextInt(800, 1050));
+            Condition.sleep(Random.nextInt(800, 900));
         ctx.inventory.select().name("Small pouch").poll().hover();
             Condition.sleep(Random.nextInt(600, 950));
-            ctx.input.press(KeyEvent.VK_SHIFT);
-
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
 
 
         ctx.inventory.select().name("Small pouch").poll().interact("Empty");
         Condition.sleep(Random.nextInt(250, 500));
 
         ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
         altar.interact("Craft-rune");
         Condition.sleep(Random.nextInt(300 , 500));
             ctx.inventory.select().name("Large pouch").poll().hover();
-            Condition.sleep(Random.nextInt(1500, 1700));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(1500, 1600));
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
         ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
         altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
 
-        Condition.sleep(Random.nextInt(1400, 1800));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+        Condition.sleep(Random.nextInt(1400, 1650));
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(250, 400));
+            Condition.sleep(Random.nextInt(150, 200));
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(50, 200));
             ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(150, 200));
 
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
-            Condition.sleep(Random.nextInt(150, 400));
+            ctx.input.send("{VK_SHIFT up}");
+            Condition.sleep(Random.nextInt(250, 350));
             if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1800));
+                Condition.sleep(Random.nextInt(1400, 1650));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1650));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1650));
             }
 
 
@@ -184,53 +191,63 @@ public abstract class AltarCraft extends Task {
 
             ctx.inventory.select().name("Giant pouch").poll().hover();
             Condition.sleep(Random.nextInt(800, 1250));
-            ctx.input.press(KeyEvent.VK_SHIFT);
-
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
 
-            ctx.input.release(KeyEvent.VK_SHIFT);
+
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(100 , 400));
 
 
 
             ctx.inventory.select().name("Medium pouch").poll().hover();
-            Condition.sleep(Random.nextInt(1400, 1700));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(1400, 1650));
+
 
             ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
             Condition.sleep(Random.nextInt(250, 500));
-            ;
+
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(100 , 400));
             ctx.inventory.select().name("Large pouch").poll().hover();
-            Condition.sleep(Random.nextInt(1400, 1700));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(1400, 1650));
+
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
             altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(1400, 1800));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(1400, 1650));
+
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(50, 150));
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(250, 400));
+            Condition.sleep(Random.nextInt(50, 150));
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(50, 150));
             ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(50, 150));
+            ctx.input.send("{VK_SHIFT up}");
 
 
             if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1800));
+                Condition.sleep(Random.nextInt(1400, 1650));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1650));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1650));
             }
 
 
@@ -240,9 +257,10 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Giant pouch").poll().hover();
             Condition.sleep(Random.nextInt(600, 950));
             ctx.inventory.shiftDroppingEnabled();
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
 
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(100 , 400));
@@ -250,20 +268,22 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Large pouch").poll().hover();
             Condition.sleep(Random.nextInt(1400, 1700));
 
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 50));
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
 
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(300 , 500));
             ctx.inventory.select().name("Medium pouch").poll().hover();
             Condition.sleep(Random.nextInt(1200, 1400));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 150));
             ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
             Condition.sleep(Random.nextInt(250, 500));
 
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT up}");
             altar.interact("Craft-rune");
             Condition.sleep(Random.nextInt(25, 50));
 
@@ -288,33 +308,55 @@ public abstract class AltarCraft extends Task {
                 Condition.sleep(Random.nextInt(25, 150));
             }
             Condition.sleep(Random.nextInt(1200, 1500));
-            ctx.input.press(KeyEvent.VK_SHIFT);
+            ctx.input.send("{VK_SHIFT down}");
+            Condition.sleep(Random.nextInt(25, 150));
             ctx.inventory.select().name("Medium pouch").poll().interact("Empty");
 
-            Condition.sleep(Random.nextInt(250, 400));
+            Condition.sleep(Random.nextInt(50, 150));
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(50, 150));
 
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
+            Condition.sleep(Random.nextInt(50, 150));
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
-            Condition.sleep(Random.nextInt(150, 400));
-            ctx.input.release(KeyEvent.VK_SHIFT);
+            Condition.sleep(Random.nextInt(50, 150));
+            ctx.input.send("{VK_SHIFT up}");
 
             if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
                 Condition.sleep(Random.nextInt(1400, 1800));
             }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1800));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(1400, 1800));
+            }
+            Condition.sleep(Random.nextInt(25, 50));
+            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(600, 900));
+
+                Condition.sleep(Random.nextInt(600, 900));
+            }
+
 
 
         }
+        ctx.game.tab(Game.Tab.MAGIC);
+        Condition.sleep(Random.nextInt(125, 250));
 
         if (ctx.inventory.select().id(5515).count() == 1) {
 
             if (!ctx.inventory.select().name("Cosmic rune").isEmpty()) {
-                ctx.magic.cast(Magic.LunarSpell.NPC_CONTACT);
-                Condition.sleep(Random.nextInt(550, 700));
-                ctx.widgets.widget(75).component(13).click();
+
+
+                ctx.widgets.widget(218).component(103).interact("Dark Mage");
+
 
                 Condition.sleep(Random.nextInt(5500, 6000));
                 ctx.input.send("{VK_SPACE}");
@@ -397,6 +439,11 @@ public abstract class AltarCraft extends Task {
  } widget76  - compoennt13
  }  ctx.movement.step()
  ctx.camera.turnTO()
+
+
+ Condition.sleep(Random.nextInt(550, 700));
+ ctx.widgets.widget(75).component(13).click();
+
 
  ctx.input.press(KeyEvent.VK_SHIFT);
  ctx.input.release(KeyEvent.VK_SHIFT);
