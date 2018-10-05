@@ -136,14 +136,11 @@ public abstract class EssBanking extends Task{
             }
 
 
-            if (ctx.inventory.select().name("Stamina potion(1)").count() == 0) {
-                if (ctx.inventory.select().name("Stamina potion(2)").count() == 0) {
-                    if (ctx.inventory.select().name("Stamina potion(3)").count() == 0) {
-                        if (ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
+            if (ctx.inventory.select().name("Stamina potion(1)").count() == 0 && ctx.inventory.select().name("Stamina potion(2)").count() == 0 &&
+                    ctx.inventory.select().name("Stamina potion(3)").count() == 0 && ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
+
                             ctx.bank.select().name("Stamina potion(4)").poll().interact("Withdraw-1");
-                        }
-                    }
-                }
+
 
             }
 
