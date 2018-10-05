@@ -64,100 +64,100 @@ public abstract class EssBanking extends Task{
             });
 
         }
-        Condition.sleep(Random.nextInt(150, 300));
-            if(ctx.inventory.select().count()>1 && ctx.inventory.select().name("Pure Essence").isEmpty()  ) {
-                ctx.bank.depositInventory();}
-        Condition.sleep(Random.nextInt(250, 500));
-                if(ctx.inventory.select().name("Stamina potion(1)").count()==0){
-                    if(ctx.inventory.select().name("Stamina potion(2)").count()==0) {
-                        if (ctx.inventory.select().name("Stamina potion(3)").count() == 0) {
-                            if (ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
-                                ctx.bank.select().name("Stamina potion(4)").poll().interact("Withdraw-1");
-                            }
+        if (ctx.bank.open()) {
+            Condition.sleep(Random.nextInt(150, 300));
+
+            ctx.bank.depositInventory();
+            Condition.sleep(Random.nextInt(250, 500));
+            if (ctx.inventory.select().name("Stamina potion(1)").count() == 0) {
+                if (ctx.inventory.select().name("Stamina potion(2)").count() == 0) {
+                    if (ctx.inventory.select().name("Stamina potion(3)").count() == 0) {
+                        if (ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
+                            ctx.bank.select().name("Stamina potion(4)").poll().interact("Withdraw-1");
                         }
                     }
-
                 }
 
-
-                ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                Condition.sleep(Random.nextInt(150, 300));
-
-
-                if (POrder ==1) {
-                    ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                    Condition.sleep(Random.nextInt(150, 300));
-                    ctx.inventory.select().name("Small pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(200, 300));
-
-                    ctx.inventory.select().name("Large pouch").poll().interact("Fill");
-                }
-                if (POrder ==2) {
-                    ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(250, 500));
-
-                    ctx.inventory.select().name("Small pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(200, 300));
-                    ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                    Condition.sleep(Random.nextInt(150, 300));
-                    ctx.inventory.select().name("Large pouch").poll().interact("Fill");
-                }
-                if (POrder ==3) {
-                    ctx.inventory.select().name("Large pouch").poll().interact("Fill");
-
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(200, 300));
-                    ctx.inventory.select().name("Small pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(150, 300));
-                    ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                    Condition.sleep(Random.nextInt(150, 300));
-                    ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
-                }
-                if (POrder ==4) {
-                    ctx.inventory.select().name("Large pouch").poll().interact("Fill");
-
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
-                    Condition.sleep(Random.nextInt(250, 500));
-                    ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                    Condition.sleep(Random.nextInt(150, 300));
-                    ctx.inventory.select().name("Small pouch").poll().interact("Fill");
-
-                    Condition.sleep(Random.nextInt(200, 300));
-                    ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
-                }
-
-
-
-        if(ctx.inventory.select().name("Stamina potion(1)").count()==0){
-            if(ctx.inventory.select().name("Stamina potion(2)").count()==0) {
-                if (ctx.inventory.select().name("Stamina potion(3)").count() == 0) {
-                    if (ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
-                        ctx.bank.select().name("Stamina potion(4)").poll().interact("Withdraw-1");
-                    }
-                }
             }
 
-        }
 
+            ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+            Condition.sleep(Random.nextInt(150, 300));
+
+
+            if (POrder == 1) {
+                ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+                Condition.sleep(Random.nextInt(150, 300));
+                ctx.inventory.select().name("Small pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(200, 300));
+
+                ctx.inventory.select().name("Large pouch").poll().interact("Fill");
+            }
+            if (POrder == 2) {
+                ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(250, 500));
+
+                ctx.inventory.select().name("Small pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(200, 300));
+                ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+                Condition.sleep(Random.nextInt(150, 300));
+                ctx.inventory.select().name("Large pouch").poll().interact("Fill");
+            }
+            if (POrder == 3) {
+                ctx.inventory.select().name("Large pouch").poll().interact("Fill");
+
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(200, 300));
+                ctx.inventory.select().name("Small pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(150, 300));
+                ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+                Condition.sleep(Random.nextInt(150, 300));
+                ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
+            }
+            if (POrder == 4) {
+                ctx.inventory.select().name("Large pouch").poll().interact("Fill");
+
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.inventory.select().name("Giant pouch").poll().interact("Fill");
+                Condition.sleep(Random.nextInt(250, 500));
+                ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+                Condition.sleep(Random.nextInt(150, 300));
+                ctx.inventory.select().name("Small pouch").poll().interact("Fill");
+
+                Condition.sleep(Random.nextInt(200, 300));
+                ctx.inventory.select().name("Medium pouch").poll().interact("Fill");
+            }
+
+
+            if (ctx.inventory.select().name("Stamina potion(1)").count() == 0) {
+                if (ctx.inventory.select().name("Stamina potion(2)").count() == 0) {
+                    if (ctx.inventory.select().name("Stamina potion(3)").count() == 0) {
+                        if (ctx.inventory.select().name("Stamina potion(4)").count() == 0) {
+                            ctx.bank.select().name("Stamina potion(4)").poll().interact("Withdraw-1");
+                        }
+                    }
+                }
+
+            }
+
+
+            ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
+            Condition.sleep(Random.nextInt(350, 450));
+            if (ctx.inventory.select().count() <= 27) {
 
                 ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                Condition.sleep(Random.nextInt(350,450));
-                if(ctx.inventory.select().count()<=27) {
+                Condition.sleep(Random.nextInt(50, 250));
+            }
+            ctx.movement.newTilePath(FirstStep);
 
-                    ctx.bank.select().name("Pure Essence").poll().interact("Withdraw-All");
-                    Condition.sleep(Random.nextInt(50, 250));
-                }
-                    ctx.movement.newTilePath(FirstStep);
-
-
+        }
 
     }
 

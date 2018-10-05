@@ -25,6 +25,9 @@ public abstract class LadderDown extends Task {
 
     public void execute(){
         RCrafter.status = "Praying and going down ladder";
+        if (ctx.game.tab() != Game.Tab.INVENTORY){
+            ctx.game.tab(Game.Tab.INVENTORY);
+        }
 
         final GameObject ladder = ctx.objects.select().name("Ladder").nearest().poll();
 

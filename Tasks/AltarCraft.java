@@ -14,7 +14,7 @@ import java.awt.event.KeyEvent;
 public abstract class AltarCraft extends Task {
 
 
-    private Tile OuroDest = new Tile(3058, 5579, 0);
+    private Tile ouroDest = new Tile(3058, 5579, 0);
 
     public AltarCraft(ClientContext ctx) {
         super(ctx);
@@ -23,7 +23,7 @@ public abstract class AltarCraft extends Task {
     @Override
     public boolean activate() {
         return ctx.inventory.select().count() >= 27 &&
-                ctx.players.local().tile().distanceTo(OuroDest) <= 5;
+                ctx.players.local().tile().distanceTo(ouroDest) <= 5;
     }
 
     public void execute() {
@@ -32,86 +32,14 @@ public abstract class AltarCraft extends Task {
         final GameObject altar = ctx.objects.select().name("Runecrafting altar").nearest().poll();
         altar.interact("Craft-rune");
         Condition.sleep(Random.nextInt(25, 50));
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
-        if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 150));
-        }
+
+         while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+             altar.interact("Craft-rune");
+             Condition.sleep(Random.nextInt(25, 150));
+
+
+         }
+
 
 
         if (POrder ==1){
@@ -123,11 +51,12 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
             Condition.sleep(Random.nextInt(250, 500));
             ctx.input.send("{VK_SHIFT up}");
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 150));
+
+
+            }
 
             Condition.sleep(Random.nextInt(800, 900));
         ctx.inventory.select().name("Small pouch").poll().hover();
@@ -149,12 +78,10 @@ public abstract class AltarCraft extends Task {
             Condition.sleep(Random.nextInt(25, 50));
         ctx.inventory.select().name("Large pouch").poll().interact("Empty");
             ctx.input.send("{VK_SHIFT up}");
-        altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
-
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 150));
+            }
         Condition.sleep(Random.nextInt(1400, 1650));
             ctx.input.send("{VK_SHIFT down}");
             Condition.sleep(Random.nextInt(25, 50));
@@ -168,19 +95,11 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
             ctx.input.send("{VK_SHIFT up}");
             Condition.sleep(Random.nextInt(250, 350));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
+                Condition.sleep(Random.nextInt(25, 150));
+
+
             }
 
 
@@ -196,7 +115,10 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
 
 
-            altar.interact("Craft-rune");
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 50));
+            }
             Condition.sleep(Random.nextInt(100 , 400));
 
 
@@ -210,18 +132,20 @@ public abstract class AltarCraft extends Task {
 
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
 
-            altar.interact("Craft-rune");
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 50));
+            }
             Condition.sleep(Random.nextInt(100 , 400));
             ctx.inventory.select().name("Large pouch").poll().hover();
             Condition.sleep(Random.nextInt(1400, 1650));
 
             ctx.inventory.select().name("Large pouch").poll().interact("Empty");
 
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-            altar.interact("Craft-rune");
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 50));
+            }
             Condition.sleep(Random.nextInt(1400, 1650));
 
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
@@ -235,19 +159,9 @@ public abstract class AltarCraft extends Task {
             ctx.input.send("{VK_SHIFT up}");
 
 
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1650));
+                Condition.sleep(Random.nextInt(25, 50));
             }
 
 
@@ -262,7 +176,10 @@ public abstract class AltarCraft extends Task {
             ctx.inventory.select().name("Giant pouch").poll().interact("Empty");
             ctx.input.send("{VK_SHIFT up}");
 
-            altar.interact("Craft-rune");
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+                altar.interact("Craft-rune");
+                Condition.sleep(Random.nextInt(25, 50));
+            }
             Condition.sleep(Random.nextInt(100 , 400));
 
             ctx.inventory.select().name("Large pouch").poll().hover();
@@ -284,28 +201,9 @@ public abstract class AltarCraft extends Task {
 
             ctx.inventory.select().name("Small pouch").poll().interact("Empty");
             ctx.input.send("{VK_SHIFT up}");
-            altar.interact("Craft-rune");
-            Condition.sleep(Random.nextInt(25, 50));
-
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
                 Condition.sleep(Random.nextInt(25, 50));
-            }
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(25, 150));
-            }
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(25, 150));
-            }
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(25, 150));
-            }
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(25, 150));
             }
             Condition.sleep(Random.nextInt(1200, 1500));
             ctx.input.send("{VK_SHIFT down}");
@@ -322,27 +220,14 @@ public abstract class AltarCraft extends Task {
             Condition.sleep(Random.nextInt(50, 150));
             ctx.input.send("{VK_SHIFT up}");
 
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
+            while (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
                 altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1800));
+                Condition.sleep(Random.nextInt(25, 50));
             }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
                 Condition.sleep(Random.nextInt(1400, 1800));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(1400, 1800));
-            }
-            Condition.sleep(Random.nextInt(25, 50));
-            if (!ctx.inventory.select().name("Pure Essence").isEmpty()) {
-                altar.interact("Craft-rune");
-                Condition.sleep(Random.nextInt(600, 900));
 
-                Condition.sleep(Random.nextInt(600, 900));
-            }
+
+
 
 
 
@@ -358,7 +243,7 @@ public abstract class AltarCraft extends Task {
                 ctx.widgets.widget(218).component(103).interact("Dark Mage");
 
 
-                Condition.sleep(Random.nextInt(6000, 7000));
+                Condition.sleep(Random.nextInt(5500, 6000));
                 while (ctx.chat.canContinue()){
                     ctx.input.send("{VK_SPACE}");
                     Condition.sleep(Random.nextInt(50, 100));

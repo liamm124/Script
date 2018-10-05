@@ -36,7 +36,7 @@ public abstract class StaminaPot extends Task {
         ctx.inventory.select().name("Stamina potion(2)").poll().interact("Drink");
         ctx.inventory.select().name("Stamina potion(3)").poll().interact("Drink");
         ctx.inventory.select().name("Stamina potion(4)").poll().interact("Drink");
-        Condition.sleep(Random.nextInt(110, 500));
+        Condition.sleep(Random.nextInt(110, 200));
 
 
     }
