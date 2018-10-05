@@ -29,7 +29,7 @@ public class AntiBan extends Task {
     @Override
     public boolean activate() {
         Random r = new Random();
-        int ra = r.nextInt(1,350);
+        int ra = r.nextInt(1,450);
         return inHouse() &&  (ra == 25 || ra == 50 || ra == 75);
     }
 

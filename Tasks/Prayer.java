@@ -20,7 +20,7 @@ public abstract class Prayer extends Task {
 
     @Override
     public boolean activate() {
-        return ctx.players.local().tile().distanceTo(Trapdoor)<=5 && ctx.prayer.prayerPoints()<=25;
+        return ctx.players.local().tile().distanceTo(Trapdoor)<=5 && ctx.prayer.prayerPoints()<=30;
     }
 
     public void execute(){

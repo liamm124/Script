@@ -26,9 +26,11 @@ public abstract class WalkAltar extends Task {
     private Tile from;
 
 
+
 @Override
     public void execute(){
             Step1AltarR1();
+
 
 
 }
@@ -52,7 +54,9 @@ public abstract class WalkAltar extends Task {
                 ctx.movement.step(firstStep2);
                 while (ctx.players.local().tile().distanceTo(firstStep2)>=10 ){
                     Condition.sleep(Random.nextInt(450,700));
-                    new AntiBan(ctx).execute();
+                    ctx.movement.step(firstStep2);
+                         new AntiBan(ctx).execute();
+
 
                 }
 
